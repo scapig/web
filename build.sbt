@@ -25,6 +25,10 @@ libraryDependencies += "com.mohiva" %% "play-silhouette-password-bcrypt" % "5.0.
 libraryDependencies += "com.mohiva" %% "play-silhouette-persistence" % "5.0.2"
 libraryDependencies += "com.mohiva" %% "play-silhouette-crypto-jca" % "5.0.2"
 libraryDependencies += "com.iheart" %% "ficus" % "1.4.1"
+libraryDependencies += "com.adrianhurt" %% "play-bootstrap" % "1.2-P26-B3"
+libraryDependencies += "org.webjars" %% "webjars-play" % "2.6.1"
+libraryDependencies += "org.webjars" % "bootstrap" % "3.3.7-1" exclude("org.webjars", "jquery")
+libraryDependencies += "org.webjars" % "jquery" % "3.2.1"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 libraryDependencies += "org.mockito" % "mockito-all" % "1.10.19" % "test"
