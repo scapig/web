@@ -6,6 +6,8 @@ GET     /authorization                  @controllers.ScapigController.authorizat
 GET     /developer-hub                  @controllers.ScapigController.developerHub()
 GET     /gateway                        @controllers.ScapigController.gateway()
 GET     /publisher                      @controllers.ScapigController.publisher()
+GET     /architecture                   @controllers.ScapigController.architecture()
+GET     /get-started                    @controllers.ScapigController.getStarted()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.versioned(file)

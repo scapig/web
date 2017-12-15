@@ -1,0 +1,14 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <div>
+        You can start Scapig with docker
+        <code>
+            docker TODO
+        </code>
+    </div>
+}
+
+@include.template("Scapig - API", main)

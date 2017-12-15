@@ -39,4 +39,12 @@ class ScapigController @Inject()(cc: ControllerComponents)(implicit webJarsUtil:
     Future(Ok(views.html.publisher()))
   }
 
+  def architecture() = Action.async { implicit request =>
+    Future(Ok(views.html.architecture()))
+  }
+
+  def getStarted() = Action.async { implicit request =>
+    Future(Ok(views.html.getStarted()))
+  }
+
 }

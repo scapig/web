@@ -6,8 +6,25 @@
     <div>
         An API is identified by its context and its version.
         The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>
+        The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.
+        The API context is determined by the prefix of the API request while the version is determined by the Accept header.
 
-        The API will contain a number of endpoints which
+        APIs follow a lifecycle which is defined by their status on the RAML file when you published:
+        <h4>API Status</h4>
+            <h5>Prototyped</h5>
+            <div>The API is available for developers to use. However they will be warned on the developer hub that they are very likely
+            to change and should expect breaking changes </div>
+
+            <h5>Published</h5>
+            <div>The API is in Production mode. Breaking changes are not allowed at this change</div>
+
+            <h5>Deprecated</h5>
+            <div>The version will soon reach end of life. Developers can not subscribe anymore to this version and existing
+                applications are advised to migrate to a new version.</div>
+
+            <h5>Retired</h5>
+            <div>The version is not available anymore on the platform and the gateway will reject requests using this version.</div>
+        </ul>
     </div>
 }
 
