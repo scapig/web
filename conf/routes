@@ -1,6 +1,11 @@
 
 GET     /                               @controllers.ScapigController.root()
-GET     /test                           @controllers.ScapigController.root()
+GET     /api                            @controllers.ScapigController.api()
+GET     /application                    @controllers.ScapigController.application()
+GET     /authorization                  @controllers.ScapigController.authorization()
+GET     /developer-hub                  @controllers.ScapigController.developerHub()
+GET     /gateway                        @controllers.ScapigController.gateway()
+GET     /publisher                      @controllers.ScapigController.publisher()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.versioned(file)

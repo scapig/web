@@ -1,0 +1,40 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <div>
+        There are 3 different types of Authorization on the API Gateway:
+        <h4>User</h4>
+            <div>The endpoints which are secured by a <b>User</b> authorisation require an Oauth 2.0 user token.
+
+                Those endpoints are user-centrics. They will returns some user data and need the approval of the user.
+                The endpoint is mapped to a scope for which the user will need to grant the application access to.
+
+                The token is created using the authorization_code grant type
+                from the <a href="https://tools.ietf.org/html/rfc6749#section-4.1.3">RFC 6749</a>
+                When the user is prompted to give access to an application to act on his behalf, a list of scopes will be
+                rendered on the grant page.
+
+            </div>
+
+        <h4>Application</h4>
+        <div>
+            The endpoints which are secured by an <b>Application</b> authorisation require a server token.
+
+                When an endpoint do not return any user data and require resources to compute the requests,
+                you want to protect the endpoint by an Application restriction.
+                The endpoint will benefit from the throttling and auditing of the API Gateway.
+
+                A server token is associated to an application and will be given to the developer when he registers its application.
+        </div>
+
+        <h4>Open</h4>
+        <div>
+            Those endpoints do not need any authentication.
+            No <b>Authorization</b> header is required in the API request.
+        </div>
+    </div>
+}
+
+@include.template("Scapig - Authorization", main)

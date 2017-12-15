@@ -1,0 +1,14 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <div>
+        An API is identified by its context and its version.
+        The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>
+
+        The API will contain a number of endpoints which
+    </div>
+}
+
+@include.template("Scapig - API", main)
