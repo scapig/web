@@ -3,63 +3,78 @@
 @()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
 @main = {
-    <div>
-        The architecture of Scapig is described in the diagram below.
-        All the components talk to each other using REST HTTP requests with a simple Json format.
-
-        Those are the components of Scapig:
-        <table>
-            <tr>
-                <th>Component</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>scapig-gateway</td>
-                <td>This is the API Gateway. It validates and proxy the requests to the service.</td>
-            </tr>
-            <tr>
-                <td>scapig-developer-hub</td>
-                <td>This is the frontend where third party developer can view the API Documentation,
-                create their own application and subscribe to the APIs</td>
-            </tr>
-            <tr>
-                <td>scapig-developer</td>
-                <td>This is the backend with the storage of the third party developer which have registered</td>
-            </tr>
-            <tr>
-                <td>scapig-application</td>
-                <td>This is the backend which stores and retrieves the applications of the platform</td>
-            </tr>
-            <tr>
-                <td>scapig-scope</td>
-                <td>This is the backend which stores and retrieves the Oauth 2.0 scopes published on the platform</td>
-            </tr>
-            <tr>
-                <td>scapig-definition</td>
-                <td>This is the backend which stores and retrieves the API Definitions published on the platform</td>
-            </tr>
-            <tr>
-                <td>scapig-oauth</td>
-                <td>This is the frontend which handles the Oauth 2.0 flow.</td>
-            </tr>
-            <tr>
-                <td>scapi-requested-authority</td>
-                <td>This is the backend which handles the transactions of the Oauth user flow.</td>
-            </tr>
-            <tr>
-                <td>scapig-delegated-authority</td>
-                <td>This is the backend which stores and retrieves the token created on the platform</td>
-            </tr>
-            <tr>
-                <td>scapig-scripts</td>
-                <td>This is a repository which contains all the scripts to start up the platform</td>
-            </tr>
-            <tr>
-                <td>scapig-publisher</td>
-                <td>This is a service which handles the publishing of the APIs from a RAML definition</td>
-            </tr>
-        </table>
-    </div>
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>ARCHITECTURE</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    The architecture of Scapig is described in the diagram below.<br/>
+                    All the components talk to each other using REST HTTP requests with a simple Json format.<br/>
+                    The components of Scapig are described in the table below.
+                    <br/><br/>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Component</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">scapig-gateway</th>
+                            <td>This is the API Gateway. It validates and proxy the requests to the service.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-developer-hub</th>
+                            <td>This is the frontend where third party developer can view the API Documentation,
+                            create their own application and subscribe to the APIs</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-developer</th>
+                            <td>This is the backend with the storage of the third party developer which have registered</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-application</th>
+                            <td>This is the backend which stores and retrieves the applications of the platform</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-scope</th>
+                            <td>This is the backend which stores and retrieves the Oauth 2.0 scopes published on the platform</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-definition</th>
+                            <td>This is the backend which stores and retrieves the API Definitions published on the platform</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-oauth</th>
+                            <td>This is the frontend which handles the Oauth 2.0 flow.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapi-requested-authority</th>
+                            <td>This is the backend which handles the transactions of the Oauth user flow.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-delegated-authority</th>
+                            <td>This is the backend which stores and retrieves the token created on the platform</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-scripts</th>
+                            <td>This is a repository which contains all the scripts to start up the platform</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">scapig-publisher</th>
+                            <td>This is a service which handles the publishing of the APIs from a RAML definition</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 }
 
 @include.template("Scapig - API", main)

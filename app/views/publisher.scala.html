@@ -3,18 +3,29 @@
 @()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
 @main = {
-    <div>
-        The component publishing the APIs on the platform is the scapig-publisher.
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>API PUBLISHER</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    The component publishing the APIs on the platform is the scapig-publisher.<br/>
 
-        To publish your APIs on the platform, you will need to create a <a href="https://raml.org/">RAML definition</a>
-        file which you can then inject in the API Platform through the scapig-publisher.
+                    To publish your APIs on the platform, you will need to create a <a href="https://raml.org/">RAML definition</a><br/>
+                    file which you can then inject in the API Platform through the scapig-publisher.<br/>
 
-        An example of a RAML file can be found here: scapig-hello-world-api
-    </div>
+                    An example of a RAML file can be found here: scapig-hello-world-api
 
-    <code>
-        curl -XPOST http://localhost:8040/publish -d %40file.raml
-    </code>
+                    <code>
+                        curl -XPOST http://localhost:8040/publish -d %40file.raml
+                    </code>
+                 </div>
+            </div>
+        </div>
+    </section>
 }
 
 @include.template("Scapig - API Publisher", main)

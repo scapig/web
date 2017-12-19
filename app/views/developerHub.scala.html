@@ -3,16 +3,27 @@
 @()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
 @main = {
-    <div>
-        The developer Hub allows third party developer to see the documentation of the APIs exposed,
-        register themselves, create their applications to start integrating with the APIs.
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>DEVELOPER HUB</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    The developer Hub allows third party developer to see the documentation of the APIs exposed,
+                    register themselves, create their applications to start integrating with the APIs.<br/>
 
-        An example of the developer hub can be found <a href="/">here</a>
+                    An example of the developer hub can be found <a href="/">here</a><br/>
 
-        The applications are required to subscribe to an API in order to integrate with it.
-        That facilitates the lifecycle of an API as you will have a good vision of which application is using which API
-        and be able to target the right people when sending notifications about a change in the API.
-    </div>
+                    The applications are required to subscribe to an API in order to integrate with it.<br/>
+                    That facilitates the lifecycle of an API as you will have a good vision of which application is using which API
+                    and be able to target the right people when sending notifications about a change in the API.
+                </div>
+            </div>
+        </div>
+    </section>
 }
 
 @include.template("Scapig - Developer Hub", main)

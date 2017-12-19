@@ -3,29 +3,57 @@
 @()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
 @main = {
-    <div>
-        An API is identified by its context and its version.
-        The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>
-        The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.
-        The API context is determined by the prefix of the API request while the version is determined by the Accept header.
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>API</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>API Definition</h3>
 
-        APIs follow a lifecycle which is defined by their status on the RAML file when you published:
-        <h4>API Status</h4>
-            <h5>Prototyped</h5>
-            <div>The API is available for developers to use. However they will be warned on the developer hub that they are very likely
-            to change and should expect breaking changes </div>
+                    An API is identified by its context and its version.<br/>
+                    The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>.<br/>
+                    The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.<br/>
+                    The API context is determined by the prefix of the API request while the version is determined by the Accept header.<br/>
 
-            <h5>Published</h5>
-            <div>The API is in Production mode. Breaking changes are not allowed at this change</div>
+                    <h3>API Lifecycle</h3>
+                    APIs follow a lifecycle which is defined by their status on the RAML file when they get published.
 
-            <h5>Deprecated</h5>
-            <div>The version will soon reach end of life. Developers can not subscribe anymore to this version and existing
-                applications are advised to migrate to a new version.</div>
-
-            <h5>Retired</h5>
-            <div>The version is not available anymore on the platform and the gateway will reject requests using this version.</div>
-        </ul>
-    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Status</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Prototyped</th>
+                                <td>The API is available for developers to use. <br/>
+                                    However they will be warned on the developer hub that they are very likely to change and should expect breaking changes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Published</th>
+                                <td>The API is in Production mode. Breaking changes are not allowed at this change</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Deprecated</th>
+                                <td>The version will soon reach end of life. Developers can not subscribe anymore to this version and existing
+                                    applications are advised to migrate to a new version.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Retired</th>
+                                <td>The version is not available anymore on the platform and the gateway will reject requests using this version.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 }
 
 @include.template("Scapig - API", main)

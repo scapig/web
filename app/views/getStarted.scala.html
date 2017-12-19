@@ -3,12 +3,23 @@
 @()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
 @main = {
-    <div>
-        You can start Scapig with docker
-        <code>
-            docker TODO
-        </code>
-    </div>
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>GET STARTED</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    You can start Scapig with docker
+                    <code>
+                        docker TODO
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
 }
 
-@include.template("Scapig - API", main)
+@include.template("Scapig - Get Started", main)

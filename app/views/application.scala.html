@@ -3,43 +3,53 @@
 @()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
 @main = {
-    <div>
-        When a developer wants to integrate with your secure APIs, he will need to create an application.
-        The application will contain the following:
-        <table>
-            <tr>
-                <th>Field</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>Redirect URI</td>
-                <td>This is the uri the user will be redirected to once he completes his Oauth 2.0 journey</td>
-            </tr>
-            <tr>
-                <td>Sandbox Credentials</td>
-                <td>Those are the client_id, client_secret and server_token of the Sandbox environment.
-                    When using those, the API Gateway will proxy the user to the Sandbox endpoint.
-                </td>
-            </tr>
-            <tr>
-                <td>Production Credentials</td>
-                <td>Those are the client_id, client_secret and server_token of the Production environment.
-                    When using those, the API Gateway will proxy the user to the Production endpoint.
-                </td>
-            </tr>
-            <tr>
-                <td>Rate Limit Tiers</td>
-                <td>The application will be given a rate limit tier. This will determine how many requests per minute and application can hit the API Gateway
-                The possible values are:
-                    <ul>
-                        <li>BRONZE</li>
-                        <li>SILVER</li>
-                        <li>GOLD</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>APPLICATION</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    When a developer wants to integrate with your secure APIs, he will need to create an application.<br/>
+                    The application will contain the following:
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Field</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Redirect URI</th>
+                                <td>This is the uri the user will be redirected to once he completes his Oauth 2.0 journey</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sandbox Credentials</th>
+                                <td>Those are the client_id, client_secret and server_token of the Sandbox environment.
+                                    When using those, the API Gateway will proxy the user to the Sandbox endpoint.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Production Credentials</th>
+                                <td>Those are the client_id, client_secret and server_token of the Production environment.
+                                    When using those, the API Gateway will proxy the user to the Production endpoint.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Rate Limit Tiers</th>
+                                <td>The application will be given a rate limit tier. This will determine how many requests per minute and application can hit the API Gateway.
+                                The possible values are: BRONZE, SILVER or GOLD
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 }
 
-@include.template("Scapig - API", main)
+@include.template("Scapig - Application", main)
