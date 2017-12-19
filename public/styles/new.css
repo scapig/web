@@ -32,7 +32,10 @@ body {
 .s-header-text {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
-    font-size: 1.5rem;
     font-style: normal;
     line-height: 1.6;
+}
+
+.landing {
+    font-size: 2rem;
 }

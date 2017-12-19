@@ -10,7 +10,7 @@
         </div>
     </section>
     <section style="background-color: white;">
-        <div class="container">
+        <div class="container landing">
             <div class="row" style="padding-top: 50px; height:400px;">
                 <div class="col-sm-4 text-center">
                     <span class="glyphicon glyphicon-road" style="font-size: 96px; color:#4CAF50;"></span>
@@ -42,22 +42,31 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container landing">
             <div class="row">
-                <h1 class="s-header-2 text-center">SCALABLE AND PLUGGABLE</h1>
+                <h1 class="s-header-2 text-center">SCALABLE</h1>
                 <p class="s-header-text">
                     Scapig has a microservice architecture.<br/>
-                    This allows you to selectively increase the capacity of the components which are in more strain.<br/><br/>
+                    This allows you to selectively increase the capacity of the components which are under more strain.<br/><br/>
                     Scapig data is stored in <a href="https://docs.mongodb.com/">MongoDB</a> which has great support on replication
                     over multiple datacenters.<br/><br/>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section style="background-color: white;">
+        <div class="container landing">
+            <div class="row">
+                <h1 class="s-header-2 text-center">PLUGGABLE</h1>
+                <p class="s-header-text">
                     Scapig is based on a series of microservices communicating through REST HTTP requests.<br/>
                     It is fairly easy to replace one of its component by a bespoke component providing the REST contract is respected.<br/>
                 </p>
             </div>
         </div>
     </section>
-    <section style="background-color: white;">
-        <div class="container">
+    <section>
+        <div class="container landing">
             <div class="row">
                 <h1 class="s-header-2 text-center">TRY IT</h1>
                 <p class="s-header-text">
@@ -66,6 +75,7 @@
             </div>
         </div>
     </section>
+
 }
 
 @include.template("Scapig - Open-Source API Manager", main)
