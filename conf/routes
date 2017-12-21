@@ -1,13 +1,19 @@
 
-GET     /                               @controllers.ScapigController.root()
-GET     /api                            @controllers.ScapigController.api()
-GET     /application                    @controllers.ScapigController.application()
-GET     /authorization                  @controllers.ScapigController.authorization()
-GET     /developer-hub                  @controllers.ScapigController.developerHub()
-GET     /gateway                        @controllers.ScapigController.gateway()
-GET     /publisher                      @controllers.ScapigController.publisher()
-GET     /architecture                   @controllers.ScapigController.architecture()
-GET     /get-started                    @controllers.ScapigController.getStarted()
+GET     /                                   @controllers.ScapigController.root()
+GET     /get-started                        @controllers.ScapigController.getStarted()
+
+GET     /architecture/components            @controllers.ScapigController.architectureComponents()
+GET     /architecture/diagram               @controllers.ScapigController.architectureDiagram()
+
+GET     /api-publisher/howto                @controllers.ScapigController.apiPublisherHowTo()
+GET     /api-publisher/raml                 @controllers.ScapigController.apiPublisherRaml()
+GET     /api-publisher/api-lifecycle        @controllers.ScapigController.apiPublisherLifecycle()
+
+GET     /developer-hub/api-documentation    @controllers.ScapigController.developerHubApiDocumentation()
+GET     /developer-hub/application          @controllers.ScapigController.developerHubApplication()
+
+GET     /api-gateway/routing                @controllers.ScapigController.apiGatewayRouting()
+GET     /api-gateway/authorization          @controllers.ScapigController.apiGatewayAuthorization()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.versioned(file)

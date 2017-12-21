@@ -1,0 +1,126 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>API PUBLISHER - RAML</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    The RAML spec can be found <a href="https://raml.org/">here</a>.<br/>
+                    An example of a RAML file can be found here: scapig-hello-world-api
+
+                    <h2>Root Properties</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">RAML Root Property</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">title</th>
+                                <td>API name</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">description</th>
+                                <td>API description</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">version</th>
+                                <td>API version</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">baseUri</th>
+                                <td>The base URI of your API Gateway</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(annotations.context)</th>
+                                <td>The API Context</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(annotations.serviceUrl)</th>
+                                <td>The service endpoint</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(annotations.status)</th>
+                                <td>The API Status (See  API lifecycle)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">(annotations.scopes)</th>
+                                <td>The Oauth 2.0 scopes.<br/>
+                                    <b>key</b> is a unique identifier for the scope.<br/>
+                                    <b>name</b> is displayed on the grant page during the Oauth 2.0 flow</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">documentation</th>
+                                <td>It contains all the sections being displayed on the API Documentation</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">mediaType</th>
+                                <td>The default media types to use for request and response bodies</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">uses</th>
+                                <td>Imported libraries for use within the API.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Endpoint Properties</h2>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">RAML Endpoint Property</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">displayName</th>
+                                <td>Endpoint name</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">description</th>
+                                <td>Endpoint description</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">is</th>
+                                <td>A list of traits to apply to all methods declared for this resource.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">is</th>
+                                <td>A list of traits to apply to all methods declared for this resource.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">securedBy</th>
+                                <td>The security schemes that apply to all methods declared.<br/>
+                                    <b>User-restricted</b>: [ sec.oauth_2_0: { scopes: [ "scope_key" ] } ]<br/>
+                                    <b>Application-restricted</b>: [ sec.x-application ]<br/>
+                                    <b>Unrestricted</b>: absent
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">headers</th>
+                                <td>Headers required in the request.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">responses</th>
+                                <td>Information about the expected responses to a request.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - API Publisher", main)

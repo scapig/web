@@ -15,32 +15,40 @@ class ScapigController @Inject()(cc: ControllerComponents)(implicit webJarsUtil:
     Future(Ok(views.html.index()))
   }
 
-  def api() = Action.async { implicit request =>
-    Future(Ok(views.html.api()))
+  def apiPublisherHowTo() = Action.async { implicit request =>
+    Future(Ok(views.html.publisher.howto()))
   }
 
-  def application() = Action.async { implicit request =>
-    Future(Ok(views.html.application()))
+  def apiPublisherRaml() = Action.async { implicit request =>
+    Future(Ok(views.html.publisher.raml()))
   }
 
-  def authorization() = Action.async { implicit request =>
-    Future(Ok(views.html.authorization()))
+  def apiPublisherLifecycle() = Action.async { implicit request =>
+    Future(Ok(views.html.publisher.apiLifecycle()))
   }
 
-  def developerHub() = Action.async { implicit request =>
-    Future(Ok(views.html.developerHub()))
+  def developerHubApiDocumentation() = Action.async { implicit request =>
+    Future(Ok(views.html.developerHub.apiDocumentation()))
   }
 
-  def gateway() = Action.async { implicit request =>
-    Future(Ok(views.html.gateway()))
+  def developerHubApplication() = Action.async { implicit request =>
+    Future(Ok(views.html.developerHub.application()))
   }
 
-  def publisher() = Action.async { implicit request =>
-    Future(Ok(views.html.publisher()))
+  def apiGatewayRouting() = Action.async { implicit request =>
+    Future(Ok(views.html.apiGateway.routing()))
   }
 
-  def architecture() = Action.async { implicit request =>
-    Future(Ok(views.html.architecture()))
+  def apiGatewayAuthorization() = Action.async { implicit request =>
+    Future(Ok(views.html.apiGateway.authorization()))
+  }
+
+  def architectureComponents() = Action.async { implicit request =>
+    Future(Ok(views.html.architecture.components()))
+  }
+
+  def architectureDiagram() = Action.async { implicit request =>
+    Future(Ok(views.html.architecture.diagram()))
   }
 
   def getStarted() = Action.async { implicit request =>

@@ -1,0 +1,32 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>API PUBLISHER - HOWTO</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    The Scapig Publisher lets you publish your API from a <a href="https://raml.org/">RAML</a> file.
+
+                    <h3>API Definition</h3>
+
+                    The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>.<br/>
+                    The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.<br/>
+                    The API context is determined by the prefix of the API request while the version is determined by the Accept header.<br/>
+
+                        <code>
+                        curl -XPOST http://localhost:8040/publish -d %40file.raml
+                    </code>
+                 </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - API Publisher", main)

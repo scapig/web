@@ -5,23 +5,21 @@
 @main = {
     <section>
         <div class="container text-center" style="padding-top: 20px;">
-            <h1 class="s-header"><strong>API</strong></h1>
+            <h1 class="s-header"><strong>API LIFECYCLE</strong></h1>
         </div>
     </section>
     <section>
         <div class="container landing">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>API Definition</h3>
+                    <h2>API Versioning</h2>
+                    <p>
+                        There is one RAML file per API Version.<br/>
+                        The API Gateway will select the version depending of the Accept Header sent in the request.<br/>
+                        <code>Accept: application/vnd.scapig.1.0+json</code> will use version 1.0.
+                    </p>
 
-                    An API is identified by its context and its version.<br/>
-                    The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>.<br/>
-                    The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.<br/>
-                    The API context is determined by the prefix of the API request while the version is determined by the Accept header.<br/>
-
-                    <h3>API Lifecycle</h3>
-                    APIs follow a lifecycle which is defined by their status on the RAML file when they get published.
-
+                    <h2>API Status</h2>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -56,4 +54,4 @@
     </section>
 }
 
-@include.template("Scapig - API", main)
+@include.template("Scapig - API Lifecycle", main)

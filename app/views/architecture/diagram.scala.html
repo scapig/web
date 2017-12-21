@@ -1,0 +1,22 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>ARCHITECTURE - DIAGRAM</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    The architecture of Scapig is described in the diagram below.<br/>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - API", main)

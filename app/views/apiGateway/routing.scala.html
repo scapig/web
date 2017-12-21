@@ -1,0 +1,65 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>API GATEWAY - ROUTING</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                        <caption>Request flow</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Flow</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>API Endpoint Identification</td>
+                                <td>The API Gateway will identify which API and endpoint matches the request.<br/>
+                                    A 404 (Not Found) will be returned if no endpoint can be identified.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Subscriptions</td>
+                                <td>For Application or User restricted endpoints, the API Gateway will validate that the application is
+                                    subscribed to the API.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Authorization</td>
+                                <td>For an Application-restricted endpoint, the API Gateway will validate that the server token is valid. <br/>
+                                    For a User-restricted endpoint, the API Gateway will validate that the token is valid and that it contains the
+                                    scope required by the endpoint.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Rate Throttling</td>
+                                <td>The API Gateway will validate that the application did not reach yet its threshold of the number of calls authorized.<br/>
+                                    A 429 (Too Many Requests) will be returned in the event it has.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Proxy</td>
+                                <td>If all the validations above are successful, the request will then be proxied to its end service.<br/>
+                                    When the token used in the header is a <b>Sandbox</b> token, this will be to the Sandbox endpoint.<br/>
+                                    Otherwise, it will be to the live endpoint.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - API Gateway", main)
