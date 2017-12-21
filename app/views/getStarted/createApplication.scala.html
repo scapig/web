@@ -1,0 +1,23 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>GET STARTED - CREATE AN APPLICATION</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    You can see the developer hub at http://localhost:/api-documentation
+                    You can then register as a developer and create your application.
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - Get Started", main)
