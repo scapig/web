@@ -20,5 +20,5 @@ docker push scapig/web:VERSION
 
 ## Running
 ``
-docker run -p8585:8585 -i -a stdin -a stdout -a stderr scapig/web:0.1
+docker run -p8585:8585 -d scapig/web:0.1
 ``
