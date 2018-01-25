@@ -20,5 +20,5 @@ docker push scapig/web:VERSION
 
 ## Running
 ``
-docker run -p9050:9050 -d scapig/web:0.1
+docker run -p9050:9050 -d scapig/web
 ``

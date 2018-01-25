@@ -63,12 +63,7 @@ class ScapigController @Inject()(cc: ControllerComponents)(implicit webJarsUtil:
     Future(Ok(views.html.getStarted.publishApi()))
   }
 
-  def getStartedApplicationEndpoint() = Action.async { implicit request =>
-    Future(Ok(views.html.getStarted.applicationEndpoint()))
+  def getStartedAuthorization() = Action.async { implicit request =>
+    Future(Ok(views.html.getStarted.authorization()))
   }
-
-  def getStartedUserEndpoint() = Action.async { implicit request =>
-    Future(Ok(views.html.getStarted.userEndpoint()))
-  }
-
 }

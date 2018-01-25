@@ -16,13 +16,10 @@
 
                     <h3>API Definition</h3>
 
-                    The API Definition is derived from the RAML file being published to the <a href="/publisher">scapig-publisher</a>.<br/>
+                    The API Definition is derived from the RAML file being published to the scapig-publisher.<br/>
                     The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.<br/>
                     The API context is determined by the prefix of the API request while the version is determined by the Accept header.<br/>
-
-                        <code>
-                        curl -XPOST http://localhost:8040/publish -d %40file.raml
-                    </code>
+                    <pre>curl -XPOST http://localhost:8040/publish -d %40file.raml</pre>
                  </div>
             </div>
         </div>

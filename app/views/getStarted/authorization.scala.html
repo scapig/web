@@ -1,0 +1,52 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>GET STARTED - APPLICATION-RESTRICTED REQUEST</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Open Endpoints</div>
+                        <div class="panel-body">
+
+                            <pre>curl -H "Accept: application/vnd.scapig.1.0+json" http://api.scapig.com/hello/world</pre>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Application Restricted Endpoints</div>
+                        <div class="panel-body">
+                            <pre>curl -H "Authorization: Bearer [SERVER_TOKEN]" -H "Accept: application/vnd.scapig.1.0+json" http://api.scapig.com/hello/application</pre>
+                            <span style="font-size:16px;">Replace the <code class="w3-codespan">SERVER_TOKEN</code> by your application server token.</span>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">User Restricted Endpoints</div>
+                        <div class="panel-body">
+                            <h4>1. User logs in and grant access</h4>
+                            @defining(s"http://api.scapig.com/oauth/authorize?client_id=[CLIENT_ID]&response_type=code&scope=read:hello&redirect_uri=http://[REDIRECT_URI]") { link =>
+                                <pre><a href="@link">@link</a></pre>
+                            }
+
+                            <h4>2. Create a token from the authorization code</h4>
+                            <pre>curl --data 'client_id=[CLIENT_ID]&client_secret=[CLIENT_SECRET]&grant_type=authorization_code&authorization_code=[AUTHORIZATION_CODE]' http://api.scapig.com/oauth/token</pre>
+
+                            <h4>3. Call the API</h4>
+                            <pre>curl -H "Accept: application/vnd.scapig.1.0+json" -H "Authorization: Bearer [ACCESS_TOKEN]" http://api.scapig.com/hello/user</pre>
+
+                            <span style="font-size:16px;">Replace the <code class="w3-codespan">CLIENT_ID</code>, <code class="w3-codespan">CLIENT_SECRET</code>, <code class="w3-codespan">REDIRECT_URI</code> by your application's.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - Get Started", main)
