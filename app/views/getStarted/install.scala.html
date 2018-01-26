@@ -5,16 +5,21 @@
 @main = {
     <section>
         <div class="container text-center" style="padding-top: 20px;">
-            <h1 class="s-header"><strong>GET STARTED - INSTALL SCAPIG</strong></h1>
+            <h1 class="s-header"><strong>GET STARTED</strong></h1>
         </div>
     </section>
     <section>
         <div class="container landing">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    Download <a href="https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml" download>docker-compose.yml</a>.<br/>
-                    You can then start Scapig with the following docker swarm commands.
+                    <h2>Prerequisite</h2>
+                    <a href="https://www.docker.com/">Docker</a> is required to run the packaged version of Scapig.
+
+                    <h2>Install</h2>
+                    Download the scapig docker file <a href="https://raw.githubusercontent.com/scapig/scripts/master/docker-compose.yml" download>docker-compose.yml</a> and
+                    run the following:
                     <pre>docker swarm init<br/>docker stack deploy --compose-file docker-compose.yml scapig</pre>
+                    This will start all the scapig components.
                 </div>
             </div>
         </div>

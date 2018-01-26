@@ -5,16 +5,13 @@
 @main = {
     <section>
         <div class="container text-center" style="padding-top: 20px;">
-            <h1 class="s-header"><strong>API PUBLISHER - RAML</strong></h1>
+            <h1 class="s-header"><strong>API PUBLISHER - RAML FILE</strong></h1>
         </div>
     </section>
     <section>
         <div class="container landing">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    The RAML spec can be found <a href="https://raml.org/">here</a>.<br/>
-                    An example of a RAML file can be found here: api-example
-
                     <h2>Root Properties</h2>
                     <table class="table table-striped">
                         <thead>
@@ -26,45 +23,45 @@
                         <tbody>
                             <tr>
                                 <th scope="row">title</th>
-                                <td>API name</td>
+                                <td>API Name</td>
                             </tr>
                             <tr>
                                 <th scope="row">description</th>
-                                <td>API description</td>
+                                <td>API Description</td>
                             </tr>
                             <tr>
                                 <th scope="row">version</th>
-                                <td>API version</td>
+                                <td>API Version</td>
                             </tr>
                             <tr>
                                 <th scope="row">baseUri</th>
-                                <td>The base URI of your API Gateway</td>
+                                <td>Base URI of your API gateway</td>
                             </tr>
                             <tr>
                                 <th scope="row">(annotations.context)</th>
-                                <td>The API Context</td>
+                                <td>API Context</td>
                             </tr>
                             <tr>
                                 <th scope="row">(annotations.serviceUrl)</th>
-                                <td>The service endpoint</td>
+                                <td>Service endpoint</td>
                             </tr>
                             <tr>
                                 <th scope="row">(annotations.status)</th>
-                                <td>The API Status (See  API lifecycle)</td>
+                                <td>API Status (See  <a href="/api-publisher/howto">API Lifecycle</a>)</td>
                             </tr>
                             <tr>
                                 <th scope="row">(annotations.scopes)</th>
-                                <td>The Oauth 2.0 scopes.<br/>
+                                <td>Oauth 2.0 scopes.<br/>
                                     <b>key</b> is a unique identifier for the scope.<br/>
                                     <b>name</b> is displayed on the grant page during the Oauth 2.0 flow</td>
                             </tr>
                             <tr>
                                 <th scope="row">documentation</th>
-                                <td>It contains all the sections being displayed on the API Documentation</td>
+                                <td>Sections being displayed on the API Documentation</td>
                             </tr>
                             <tr>
                                 <th scope="row">mediaType</th>
-                                <td>The default media types to use for request and response bodies</td>
+                                <td>Media types to use for request and response bodies</td>
                             </tr>
                             <tr>
                                 <th scope="row">uses</th>
@@ -93,15 +90,15 @@
                             </tr>
                             <tr>
                                 <th scope="row">is</th>
-                                <td>A list of traits to apply to all methods declared for this resource.</td>
+                                <td>List of traits to apply to all methods declared for this resource.</td>
                             </tr>
                             <tr>
                                 <th scope="row">is</th>
-                                <td>A list of traits to apply to all methods declared for this resource.</td>
+                                <td>List of traits to apply to all methods declared for this resource.</td>
                             </tr>
                             <tr>
                                 <th scope="row">securedBy</th>
-                                <td>The security schemes that apply to all methods declared.<br/>
+                                <td>Security schemes that apply to all methods declared.<br/>
                                     <b>User-restricted</b>: [ sec.oauth_2_0: { scopes: [ "scope_key" ] } ]<br/>
                                     <b>Application-restricted</b>: [ sec.x-application ]<br/>
                                     <b>Unrestricted</b>: absent
@@ -117,6 +114,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    An example of a <a href="https://raml.org/">RAML</a> file can be found <a href="https://raw.githubusercontent.com/scapig/api-example/master/conf/hello-world.raml">here</a>.<br/>
                  </div>
             </div>
         </div>

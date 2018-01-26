@@ -23,10 +23,6 @@ class ScapigController @Inject()(cc: ControllerComponents)(implicit webJarsUtil:
     Future(Ok(views.html.publisher.raml()))
   }
 
-  def apiPublisherLifecycle() = Action.async { implicit request =>
-    Future(Ok(views.html.publisher.apiLifecycle()))
-  }
-
   def developerHubApiDocumentation() = Action.async { implicit request =>
     Future(Ok(views.html.developerHub.apiDocumentation()))
   }
@@ -51,19 +47,15 @@ class ScapigController @Inject()(cc: ControllerComponents)(implicit webJarsUtil:
     Future(Ok(views.html.architecture.diagram()))
   }
 
-  def getStartedInstall() = Action.async { implicit request =>
+  def getStarted() = Action.async { implicit request =>
     Future(Ok(views.html.getStarted.install()))
   }
 
-  def getStartedCreateApplication() = Action.async { implicit request =>
-    Future(Ok(views.html.getStarted.createApplication()))
+  def developerHubCreateApplication() = Action.async { implicit request =>
+    Future(Ok(views.html.developerHub.createApplication()))
   }
 
-  def getStartedPublishApi() = Action.async { implicit request =>
-    Future(Ok(views.html.getStarted.publishApi()))
-  }
-
-  def getStartedAuthorization() = Action.async { implicit request =>
-    Future(Ok(views.html.getStarted.authorization()))
+  def apiGatewayExample() = Action.async { implicit request =>
+    Future(Ok(views.html.apiGateway.example()))
   }
 }

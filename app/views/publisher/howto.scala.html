@@ -12,15 +12,59 @@
         <div class="container landing">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    The Scapig Publisher lets you publish your API from a <a href="https://raml.org/">RAML</a> file.
+                    <h2>Publish an API</h2>
+                    You can publish an API from a <a href="https://raml.org/">RAML file</a> with the following command:
+                    <pre>curl -XPOST http://localhost:8040/publish --data &#64;ramlFile</pre>
+                    An example of RAML file can be found <a href="https://raw.githubusercontent.com/scapig/api-example/master/conf/hello-world.raml">here</a>
+                    <br/><br/>
 
-                    <h3>API Definition</h3>
+                    <h2>Definition</h2>
 
-                    The API Definition is derived from the RAML file being published to the scapig-publisher.<br/>
-                    The API will contain a number of endpoints which can be either open, application-restricted or user-restricted.<br/>
-                    The API context is determined by the prefix of the API request while the version is determined by the Accept header.<br/>
-                    <pre>curl -XPOST http://localhost:8040/publish -d %40file.raml</pre>
-                 </div>
+                    An API is defined by its <b>context</b> and its <b>version</b>.<br/>
+                    It contains a number of endpoints which can be either open, application-restricted or user-restricted.<br/>
+                    The API context is determined by the prefix of the API request while the version is determined by the Accept header.
+                    <br/><br/>
+
+                    <h2>Versioning</h2>
+
+                    There is one RAML file per API Version.<br/>
+                    The API Gateway will select the version depending of the Accept Header sent in the request.<br/>
+                    For example, <code>Accept: application/vnd.scapig.1.0+json</code> will route to version 1.0.
+                    <br/><br/>
+
+                    <h2>Lifecycle</h2>
+
+                    The API lifecycle is defined by the status published in the RAML file which can have any of the following:
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Status</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Prototyped</th>
+                                <td>The API is available for developers to use.<br/>
+                                    However they will be warned on the developer hub that they are very likely to change and should expect breaking changes.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Published</th>
+                                <td>The API is in Production mode. Breaking changes are not allowed at this state.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Deprecated</th>
+                                <td>The version will soon reach end of life. Developers can not subscribe anymore to this version and existing
+                                    applications are advised to migrate to a new version.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Retired</th>
+                                <td>The version is not available anymore on the platform and the gateway will reject requests using this version.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
     </section>
