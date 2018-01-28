@@ -1,0 +1,86 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>DEVELOPER HUB</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Developer Hub</h2>
+                    The developer Hub allows third party developer to:
+                    <ul>
+                        <li>See the API documentation</li>
+                        <li>Register</li>
+                        <li>Create an application</li>
+                        <li>Subscribe to APIs</li>
+                    </ul>
+
+                    <p>
+                    The applications are required to subscribe to an API in order to integrate with it.<br/>
+                    That facilitates the lifecycle of an API as you will have a good vision of which application is using which API.<br/>
+                    This allows you to target the right people when sending notifications about a change in the API.
+                    </p>
+
+                    <h2>Application</h2>
+                    Developers will need to create an application to integrate with the secured endpoints.<br/>
+                    The application contains the following:
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Field</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Name</th>
+                                <td>This will be shown to the end user when they authorize the application to access their data.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Description</th>
+                                <td>An internal field to describe your application.</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Redirect URIs</th>
+                                <td>
+                                    The whitelist of URIs which are allowed when redirecting the user to the application server for the authorization_code flow.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Subscriptions</th>
+                                <td>This contains the list of APIs on the platform and allow the developer to subscribe to the APIs.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sandbox Credentials</th>
+                                <td>Those are the client_id, client_secret and server_token of the Sandbox environment.
+                                    When using those, the API Gateway will proxy the user to the Sandbox endpoint  (starting with /sandbox).
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Production Credentials</th>
+                                <td>Those are the client_id, client_secret and server_token of the Production environment.
+                                    When using those, the API Gateway will proxy the user to the Production endpoint.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Rate Limit Tiers</th>
+                                <td>The application will be given a rate limit tier. This will determine how many requests per minute and application can hit the API Gateway.
+                                The possible values are: BRONZE, SILVER or GOLD
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - Developer Hub", main)

@@ -12,11 +12,17 @@
         <div class="container landing">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h2>Publish an API</h2>
-                    You can publish an API from a <a href="https://raml.org/">RAML file</a> with the following command:
-                    <pre>curl -XPOST http://localhost:8040/publish --data &#64;ramlFile</pre>
-                    An example of RAML file can be found <a href="https://raw.githubusercontent.com/scapig/api-example/master/conf/hello-world.raml">here</a>
+                    <h2>Prerequisite</h2>
+                    <p>
+                        Create a RAML file to describe your API. (<a href="https://raw.githubusercontent.com/scapig/api-example/master/conf/hello-world.raml">Example RAML file</a>)
+                    </p>
+                    <a href="https://raml.org/"><img src="/assets/images/raml.png" class="img-fluid img-thumbnail" alt="RAML"/></a>
                     <br/><br/>
+
+                    <h2>Publish an API</h2>
+                    You can publish an API from a RAML file with the following command:
+                    <pre>curl -XPOST http://localhost:8040/publish --data &#64;ramlFile</pre>
+                    <br/>
 
                     <h2>Definition</h2>
 
@@ -70,4 +76,4 @@
     </section>
 }
 
-@include.template("Scapig - API Publisher", main)
+@include.template("Scapig - Publish an API", main)

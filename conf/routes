@@ -9,13 +9,11 @@ GET     /architecture/diagram               @controllers.ScapigController.archit
 GET     /api-publisher/howto                @controllers.ScapigController.apiPublisherHowTo()
 GET     /api-publisher/raml                 @controllers.ScapigController.apiPublisherRaml()
 
-GET     /developer-hub/api-documentation    @controllers.ScapigController.developerHubApiDocumentation()
-GET     /developer-hub/application          @controllers.ScapigController.developerHubApplication()
-GET     /developer-hub/create-application     @controllers.ScapigController.developerHubCreateApplication()
+GET     /developer-hub                      @controllers.ScapigController.developerHub()
 
-GET     /api-gateway/routing                @controllers.ScapigController.apiGatewayRouting()
 GET     /api-gateway/authorization          @controllers.ScapigController.apiGatewayAuthorization()
-GET     /api-gateway/example                @controllers.ScapigController.apiGatewayExample()
+GET     /api-gateway/api-access             @controllers.ScapigController.apiGatewayApiAccess()
+GET     /api-gateway/sandbox                @controllers.ScapigController.apiGatewaySandbox()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.versioned(file)
