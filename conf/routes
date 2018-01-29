@@ -4,7 +4,7 @@ GET     /                                   @controllers.ScapigController.root()
 GET     /get-started                        @controllers.ScapigController.getStarted()
 
 GET     /architecture/components            @controllers.ScapigController.architectureComponents()
-GET     /architecture/diagram               @controllers.ScapigController.architectureDiagram()
+GET     /architecture/diagrams               @controllers.ScapigController.architectureDiagrams()
 
 GET     /api-publisher/howto                @controllers.ScapigController.apiPublisherHowTo()
 GET     /api-publisher/raml                 @controllers.ScapigController.apiPublisherRaml()

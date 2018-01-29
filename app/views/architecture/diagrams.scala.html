@@ -1,0 +1,32 @@
+@import org.webjars.play.WebJarsUtil
+
+@()(implicit webJarsUtil: WebJarsUtil, assets: AssetsFinder)
+
+@main = {
+    <section>
+        <div class="container text-center" style="padding-top: 20px;">
+            <h1 class="s-header"><strong>ARCHITECTURE - DIAGRAMS</strong></h1>
+        </div>
+    </section>
+    <section>
+        <div class="container landing">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>Publish an API on the Platform</h2>
+                    <img src="/assets/images/publishApi.png"/>
+
+                    <h2>Access the Developer Hub</h2>
+                    <img src="/assets/images/developerHub.png"/>
+
+                    <h2>Create an Access Token</h2>
+                    <img src="/assets/images/createToken.png"/>
+
+                    <h2>Make an API Request</h2>
+                    <img src="/assets/images/apiGateway.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+@include.template("Scapig - Architecture Diagrams", main)

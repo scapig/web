@@ -35,8 +35,8 @@ class ScapigController @Inject()(cc: ControllerComponents)(implicit webJarsUtil:
     Future(Ok(views.html.architecture.components()))
   }
 
-  def architectureDiagram() = Action.async { implicit request =>
-    Future(Ok(views.html.architecture.diagram()))
+  def architectureDiagrams() = Action.async { implicit request =>
+    Future(Ok(views.html.architecture.diagrams()))
   }
 
   def getStarted() = Action.async { implicit request =>
