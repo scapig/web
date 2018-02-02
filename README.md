@@ -13,9 +13,9 @@ docker build -t web .
 
 ## Publishing
 ``
-docker tag web scapig/web:VERSION
+docker tag web scapig/web
 docker login
-docker push scapig/web:VERSION
+docker push scapig/web
 ``
 
 ## Running
