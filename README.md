@@ -1,5 +1,7 @@
 ## web
 
+This is the documentation of the API Manager Scapig: http://www.scapig.com.
+
 ## Building
 ``
 sbt clean test
